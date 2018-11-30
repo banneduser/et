@@ -26,7 +26,7 @@ then
 
 elif [ "$1" == "become" ] # Tommyknockers allusion =)
 then
-	my_identity=$(remote_exec "cat ufo/identity")
+	my_identity=$(remote_exec "cat .et/identity")
 	echo "Identity: \"$my_identity\""
 	echo "Would you like to set up a user account on this system matching your identity? [yN]"
 	read affirmation
@@ -42,14 +42,14 @@ then
 
 elif [ "$1" == "form" ]
 then
-	list_apt=$(remote_exec "cat ufo/terraform/apt")
-	list_snap=$(remote_exec "cat ufo/terraform/snap")
+	list_apt=$(remote_exec "cat .et/terraform/apt")
+	list_snap=$(remote_exec "cat .et/terraform/snap")
 	sudo apt install $list_apt -y
 	sudo snap install $list_snap
 
 elif [ "$1" == "vim" ]
 then
-	list_vim=$(remote_exec "cat ufo/terraform/vim")
+	list_vim=$(remote_exec "cat .et/terraform/vim")
 	vim_loc=$(which vim)
 	sudo apt install vim
 	wget https://github.com/tpope/vim-pathogen/blob/master/autoload/pathogen.vim
@@ -63,13 +63,13 @@ then
 
 elif [ "$1" == "recall" ]
 then
-	remote_exec "echo \"$2\" >> ufo/recall"
+	remote_exec "echo \"$2\" >> .et/recall"
 
 elif [ "$1" == "backup" ]
 then
 	date
 	echo "Beginning backup (rsync)"
-	BACKUP_PATH="/data/data/com.termux/files/home/et-backups/" 
+	BACKUP_PATH="/data/data/com.termux/files/home/.et/backups/" 
 	rsync --progress --stats --delete -e "ssh -p 8022" -a --exclude=".*/" --exclude=~/.cache ~ user@$UPSTREAM:$BACKUP_PATH 
 	echo "Backup complete"
 else
