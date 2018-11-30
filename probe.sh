@@ -3,6 +3,7 @@ upstream=$(ssh default@$UPSTREAM -p 8022 "uname -a")
 upstream_ram=$(ssh default@$UPSTREAM -p 8022 "free -m | grep Mem")
 upstream_ram=$(echo $upstream_ram|awk '{print $2}')
 batstat=$(ssh default@$UPSTREAM -p 8022 "termux-battery-status" | jq -r ".percentage")
+data_stores=$(ssh default@$UPSTREAM -p 8022 "du -hs et-backups/")
 
 echo "Identity: $HOSTNAME"
 echo ''
@@ -14,3 +15,4 @@ echo $upstream | awk '{print "\tKernel: " $3}'
 echo "	Upstream RAM:" $upstream_ram"M"
 echo "	Processor count:" $(ssh default@$UPSTREAM -p 8022 "cat /proc/cpuinfo" | grep processor | wc -l)
 echo "	Battery state: $batstat%"
+echo "  	Stashed data: $data_stores"

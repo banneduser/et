@@ -38,3 +38,32 @@ And be dumped on your phone's termux shell.
 One of the objectives of the project is to rely as much as possible on standard POSIX tools.
 
 The main project will most likely be written in bash script, but some of the subtools ('apps') may be written in Python, because it's easier to build bigger software using something like that.
+
+## Commands, current and future
+
+### beam up
+Dumps you into your phone's shell.
+
+### beam up [command]
+Executes a command on your phone, prints the standard output, then exits.
+
+### beam scorch
+Zeroes out all local copies of your files.
+
+### beam backup
+Creates a copy of your home directory on your phone.
+
+### beam backup && beam scorch
+;)
+
+### [sudo] beam 
+Destroys the local user environment. Requires root.
+
+### beam mount
+Mounts phone filesystem locally.
+
+### probe
+Prints a status update of the et system.
+
+### probe up
+Return all adjacent nodes to the phone.
