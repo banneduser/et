@@ -1,11 +1,17 @@
 #!/bin/bash
 
+# beam.sh is where most of the et action currently takes place
+# It contains no code involved in setting up and viewing the state of a cluster.
+# beam.sh solely deals with performing actions inside the cluster, based on it's current configuration.
+# For example, 'beam up' opens an SSH connection to the direct upstream of the current node.
+
 MY_IP=$(ifconfig | grep broadcast | awk '{print $2}')
+# termux SSH port...
 SSH_PORT=8022
 
-remote_exec () { ssh "$UPSTREAM" -p $SSH_PORT $1 
-}
+remote_exec () { ssh "$UPSTREAM" -p $SSH_PORT $1 }
 
+# opens an SSH connection to, or runs a command on, the local upstream
 if [ "$1" == "up" ]
 then
 	if [ "$#" -eq 1 ]
@@ -15,6 +21,7 @@ then
 		ssh "$UPSTREAM" -p $SSH_PORT $2
 	fi
 
+# opens an SSH connection to, or runs a command on, the phone
 elif [ "$1" == "phone" ]
 then
 	if [ "$#" -eq 1 ]
@@ -24,6 +31,7 @@ then
 		ssh "$PHONE_IP" -p $SSH_PORT $2
 	fi
 
+# Creates an account on the local machine matching the et identity file
 elif [ "$1" == "become" ] # Tommyknockers allusion =)
 then
 	my_identity=$(remote_exec "cat .et/identity")
@@ -40,6 +48,7 @@ then
 		echo "Understood. Aborting"
 	fi
 
+# Installs programs cached on upstream
 elif [ "$1" == "form" ]
 then
 	list_apt=$(remote_exec "cat .et/terraform/apt")
@@ -47,6 +56,7 @@ then
 	sudo apt install $list_apt -y
 	sudo snap install $list_snap
 
+# Installs vim configuration stored on upstream
 elif [ "$1" == "vim" ]
 then
 	list_vim=$(remote_exec "cat .et/terraform/vim")
@@ -54,6 +64,7 @@ then
 	sudo apt install vim
 	wget https://github.com/tpope/vim-pathogen/blob/master/autoload/pathogen.vim
 
+# Creates a reverse runnel on upstream leading to local
 elif [ "$1" == "mirror" ]
 then
 	LOCALPORT=$2
@@ -61,10 +72,12 @@ then
 
 	remote_exec "nc -v -l -k -p $REMOTEPORT -c \"nc 192.168.43.201 $LOCALPORT\""
 
+# Recall a string on upstream
 elif [ "$1" == "recall" ]
 then
 	remote_exec "echo \"$2\" >> .et/recall"
 
+# Back up your current user directory on upstream
 elif [ "$1" == "backup" ]
 then
 	date
