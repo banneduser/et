@@ -8,13 +8,21 @@
 beam up #scotty
 ```
 
-ET is a framework for allowing for more communication between phones and PCs. It is also a framework for making the creation of ad-hoc computer clusters super simple.
+ET is a framework for allowing for more effective communication between phones and PCs. It is also a framework for making the creation of ad-hoc computer clusters super simple.
 
 It currently consists of two tools:
 - beam, a tool to interact with, and exchange state with an 'upstream provider', such as a phone
 - probe, a tool to examine, create and configure an ad-hoc cluster
 
 I'm pretty committed to this tool, so you can expect to see commits here for... years, honestly. It's a long way from finished. You should consider the current status a definite pre-alpha.
+
+## Project goals
+
+Imagine this:
+
+You bought a brand new computer at the store. You plug your phone into it, and your computer PXE boots the Ubuntu installer off of your phone. It installs Ubuntu on the new machine.
+
+Then, like magic, your settings, desktop icons, installed programs, and files appear on the machine, all without the use of any 'cloud' service to install your settings. The whole time, they were all installed on your phone!
 
 ## Alright, how do **I** reach warp speed?
 
