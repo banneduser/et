@@ -10,15 +10,19 @@ beam up #scotty
 
 ET is a framework for allowing for more communication between phones and PCs. It is also a framework for making the creation of ad-hoc computer clusters super simple.
 
-It currently consists of two primary tools:
-- beam, a tool to seemlessly interact with an exchange state with an upward provider, such as a phone
-- probe, a tool to understand and configure an ad-hoc cluster
+It currently consists of two tools:
+- beam, a tool to interact with, and exchange state with an 'upstream provider', such as a phone
+- probe, a tool to examine, create and configure an ad-hoc cluster
 
-## Alright, how do I reach warp speed?
+I'm pretty committed to this tool, so you can expect to see commits here for... years, honestly. It's a long way from finished. You should consider the current status a definite pre-alpha.
 
-At the moment, this is pretty much just a tool for making it really, really easy to integrate your PC with your phone. To make it tick, you'll need a POSIX environment on your phone. It doesn't need to be rooted, just download Termux on the Google Play store, and run 'sshd', the SSH daemon. It should spawn an SSH server on port 8022.
+## Alright, how do **I** reach warp speed?
 
-Find out your phone's IP address, and that's all you need.
+At the moment, this is pretty much just a tool for making it really, really easy to integrate your PC with your phone. 
+
+To make it work, you'll need a POSIX shell environment on your phone. It doesn't need to be rooted, just download the app 'Termux' on the Google Play store. Install and run 'sshd', the SSH daemon. It should spawn an SSH server on port 8022.
+
+Find out your phone's IP address.
 
 Then, download these scripts, and run setup.sh.
 
