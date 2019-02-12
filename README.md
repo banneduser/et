@@ -8,14 +8,11 @@
 beam up #scotty
 ```
 
-ET is a framework for greasing the communication between phones and PCs.
-In a more general sense, it is a framework for making the creation of ad-hoc computer clusters super simple.
+ET is a framework for allowing for more communication between phones and PCs. It is also a framework for making the creation of ad-hoc computer clusters super simple.
 
-It consists of two primary tools:
+It currently consists of two primary tools:
 - beam, a tool to seemlessly interact with an exchange state with an upward provider, such as a phone
 - probe, a tool to understand and configure an ad-hoc cluster
-
-These two tools work in tandem.
 
 ## Alright, how do I reach warp speed?
 
