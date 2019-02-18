@@ -16,14 +16,6 @@ It currently consists of two tools:
 
 I'm pretty committed to this tool, so you can expect to see commits here for... years, honestly. It's a long way from finished. You should consider the current status a definite pre-alpha.
 
-## Project goals
-
-Imagine this:
-
-You bought a brand new computer at the store. You plug your phone into it, and your computer PXE boots the Ubuntu installer off of your phone. It installs Ubuntu on the new machine.
-
-Then, like magic, your settings, desktop icons, installed programs, and files appear on the machine, all without the use of any 'cloud' service to install your settings. The whole time, they were all installed on your phone!
-
 ## Alright, how do **I** reach warp speed?
 
 At the moment, this is pretty much just a tool for making it really, really easy to integrate your PC with your phone. 
