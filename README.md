@@ -5,6 +5,8 @@ It currently consists of two tools:
 - beam, a tool to interact with, and exchange state with an 'upstream provider', such as a phone
 - probe, a tool to examine, create and configure an ad-hoc cluster
 
+### see also: https://github.com/magneticleaves/ranch
+
 ## Alright, how do I get it to work?
 
 To make it work, you'll need a POSIX shell environment on your phone. It doesn't need to be rooted, just download the app 'Termux' on the Google Play store. Install and run 'sshd', the SSH daemon. It should spawn an SSH server on port 8022.
