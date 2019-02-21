@@ -1,24 +1,11 @@
 # et
-### extraterrestrial technology
-#### 'et phone home'
-
-## What is ET?
-
-```
-beam up #scotty
-```
-
-ET is a framework for allowing for more effective communication between phones and PCs. It is also a framework for making the creation of ad-hoc computer clusters super simple.
+## a toolkit for making communication between phones and PCs simpler
 
 It currently consists of two tools:
 - beam, a tool to interact with, and exchange state with an 'upstream provider', such as a phone
 - probe, a tool to examine, create and configure an ad-hoc cluster
 
-I'm pretty committed to this tool, so you can expect to see commits here for... years, honestly. It's a long way from finished. You should consider the current status a definite pre-alpha.
-
-## Alright, how do **I** reach warp speed?
-
-At the moment, this is pretty much just a tool for making it really, really easy to integrate your PC with your phone. 
+## Alright, how do I get it to work?
 
 To make it work, you'll need a POSIX shell environment on your phone. It doesn't need to be rooted, just download the app 'Termux' on the Google Play store. Install and run 'sshd', the SSH daemon. It should spawn an SSH server on port 8022.
 
